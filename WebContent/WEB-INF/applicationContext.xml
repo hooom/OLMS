@@ -12,7 +12,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/chenlu">
+			value="jdbc:mysql://localhost:3306/OLMS">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>

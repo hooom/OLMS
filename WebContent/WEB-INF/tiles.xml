@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+
+	<!-- admin pages  -->
+    <definition name="adminTemplate" template="/admin/pageTemplate.jsp">
+    	<put-attribute name="headScript" value="" />
+    	<put-attribute name="headerMenu" value="/admin/header.jsp" />
+    	<put-attribute name="subMenu" value="" />
+    	<put-attribute name="content" value="" />
+    	<put-attribute name="footer" value="/admin/footer.jsp" />
+    </definition>
+    <definition name="adminSubMenuTemplate" template="/admin/subMenuTemplate.jsp">
+    	<put-attribute name="subMenuItems" value="" />
+    </definition>    
+    
+    
+    <definition name="/admin.login.tiles" template="/admin/login.jsp">
+    </definition>
+    <definition name="/admin.sessionTimeout.tiles" template="/admin/sessionTimeout.jsp">
+    </definition>
+    
+    
+     <!-- index page -->
+    <definition name="adminIndexSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/indexSubMenuItems.jsp" />
+    </definition>
+    <definition name="/admin.index.tiles" extends="adminTemplate">
+    	<put-attribute name="subMenu" value="adminIndexSubMenu" />
+    	<put-attribute name="content" value="/admin/indexContent.jsp" />
+    </definition>
+ 
+
+ 	<!-- user Manage -->
+    <definition name="/admin.userManage.tiles" extends="adminTemplate">
+    	<put-attribute name="subMenu" value="adminSubMenuTemplate" />
+    	<put-attribute name="content" value="/admin/userManage/userManage.jsp" />
+    </definition>  
+    
+    <!-- course manage -->
+    <definition name="adminCourseManageSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/courseManage/subMenuItems.jsp" />
+    </definition>
+    <definition name="adminCourseManageTemplate" extends="adminTemplate">
+    	<put-attribute name="headScript" value="/admin/courseManage/courseManageHeadScript.jsp" />
+    	<put-attribute name="subMenu" value="adminCourseManageSubMenu" />
+    </definition>
+    <definition name="/admin.courseManage.tiles" extends="adminCourseManageTemplate">
+    	<put-attribute name="content" value="/admin/courseManage/courseManage.jsp" />
+    </definition>
+    <definition name="/admin.courseManage.courseAdd.tiles" extends="adminCourseManageTemplate">
+    	<put-attribute name="content" value="/admin/courseManage/courseAdd.jsp" />
+    </definition>	
+    <definition name="/admin.courseManage.courseDetail.tiles" extends="adminCourseManageTemplate">
+    	<put-attribute name="content" value="/admin/courseManage/courseDetail.jsp" />
+    </definition>	
+		
+		
+	<!--  video manage -->
+    <definition name="adminVideoManageSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/videoManage/subMenuItems.jsp" />
+    </definition>
+    <definition name="adminVideoManageTemplate" extends="adminTemplate">
+    	<put-attribute name="headScript" value="/admin/videoManage/videoManageHeadScript.jsp"/>
+    	<put-attribute name="subMenu" value="adminVideoManageSubMenu" />
+    </definition>
+    <definition name="/admin.videoManage.tiles" extends="adminVideoManageTemplate">
+    	<put-attribute name="content" value="/admin/videoManage/videoManage.jsp" />
+    </definition>
+    <definition name="/admin.videoManage.videoAdd.tiles" extends="adminVideoManageTemplate">
+    	<put-attribute name="content" value="/admin/videoManage/videoAdd.jsp" />
+    </definition>
+    <definition name="/admin.videoManage.videoAddSuccess.tiles" extends="adminVideoManageTemplate">
+    	<put-attribute name="content" value="/admin/videoManage/videoAddSuccess.jsp" />
+    </definition>
+    <definition name="/admin.videoManage.videoDetail.tiles" extends="adminVideoManageTemplate">
+    	<put-attribute name="content" value="/admin/videoManage/videoDetail.jsp" />
+    </definition> 
+	
+	
+	<!--  test paper manage -->	
+    <definition name="adminTestPaperManageSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/testPaperManage/subMenuItems.jsp" />
+    </definition>
+    <definition name="/admin.testPaperManage.tiles" extends="adminTemplate">
+    	<put-attribute name="subMenu" value="adminTestPaperManageSubMenu" />
+    	<put-attribute name="content" value="/admin/testPaperManage/testPaperManage.jsp" />
+    </definition>
+		
+	<!--  exam manage -->
+    <definition name="adminExamManageSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/examManage/subMenuItems.jsp" />
+    </definition>
+    <definition name="/admin.examManage.tiles" extends="adminTemplate">
+    	<put-attribute name="subMenu" value="adminExamManageSubMenu" />
+    	<put-attribute name="content" value="/admin/examManage/examManage.jsp" />
+    </definition>
+		
+    
+    
+    
+    <!--  udacity theme front pages-->
+    <definition name="udacityTemplate" template="/front/udacity/udacityTemplate.jsp">
+    	<put-attribute name="container" value="" />
+    </definition>
+    <definition name="/front.udacity.index.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/index.jsp"/>
+    </definition>
+    <definition name="/front.udacity.register.tiles" template="/front/udacity/register.jsp">
+    </definition>
+    <definition name="/front.udacity.registerSuccess.tiles" template="/front/udacity/registerSuccess.jsp">
+    </definition>
+    <definition name="/front.udacity.courseList.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/courseList.jsp" />
+    </definition>  
+    <definition name="/front.udacity.courseDetail.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/courseDetail.jsp"/>
+    </definition>
+ 	<definition name="/front.udacity.studentCourseList.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/studentCourseList.jsp"/>
+    </definition>
+    <definition name="/front.udacity.videoPlay.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/videoPlay.jsp"/>
+    </definition>
+    
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

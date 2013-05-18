@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.olms.model.User">
+		<id name="userID">
+			<generator class="identity" />
+		</id>
+
+		<property name="username" />
+		<property name="password" />
+		<property name="email" />
+		<property name="role" />
+
+		<set name="comments" inverse="true" lazy="false">
+			<key column="speakerID" not-null="true" />
+			<one-to-many class="com.olms.model.CommentItem" />
+		</set>
+		<set name="courses" inverse="true" lazy="false">
+			<key column="teacherID" not-null="true" />
+			<one-to-many class="com.olms.model.Course" />
+		</set>
+		<property name="status" />
+
+	</class>
+</hibernate-mapping>
+

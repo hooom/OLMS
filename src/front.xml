@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="front" namespace="/front" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<action name="goIndex" class="goIndexAction">
+			<result type="tiles">/front.udacity.index.tiles</result>
+		</action>
+
+		<action name="goRegister">
+			<result type="tiles">/front.udacity.register.tiles</result>
+		</action>
+		<action name="register" class="registerAction">
+			<result type="tiles">/front.udacity.registerSuccess.tiles</result>
+			<result name="input" type="tiles">/front.udacity.register.tiles</result>
+		</action>
+		
+		<action name="courseList" class="courseListAction" method="query">
+			<result type="tiles">/front.udacity.courseList.tiles</result>
+		</action>
+		<action name="courseDetailInput" class="courseUpdateAction" method="input">
+			<result name="input" type="tiles">/front.udacity.courseDetail.tiles</result>
+		</action>
+		
+		<action name="videoPlay" class="videoPlayAction" method="input">
+			<result name="input" type="tiles">/front.udacity.videoPlay.tiles</result>
+		</action>
+		
+		<!--  action depend on logined user -->
+		<action name="studentCourseList" class="courseListAction">
+			<result type="tiles">/front.udacity.studentCourseList.tiles</result>
+		</action>
+		<action name="logout" class="logoutAction">
+			<result type="tiles">/admin.login.tiles</result>
+		</action>
+	</package>
+
+
+
+</struts>

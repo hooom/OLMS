@@ -1,0 +1,49 @@
+*{margin:0;padding:0}
+a:focus {outline:none;}
+html{height:100%;}
+body{height:100%;}
+#top{ background-color:#1d63c6; height:69px; width:100%;}
+.login-welcome{padding-left:20px; color:#fff; font-size:12px;background:url(resource/img/admin/topbg.gif) no-repeat;}
+.login-welcome a:link,.login-welcome a:visited{color:#fff; text-decoration:none;}
+
+#welcome {color: #FFFFFF;padding: 0 30px 0 5px;}
+#logout {color: #FFFFFF; padding-left: 5px;}
+
+.nav{height:31px; overflow:hidden;}
+.nav-menu{background:url(resource/img/admin/bg.png) repeat-x; height:31px; list-style:none; padding-left:20px; font-size:14px;}
+.nav .current {background: url(resource/img/admin/navcurrbg.gif) no-repeat 0px 2px; color:#fff; width:72px; text-align:center;} 
+.nav .current a{color:#fff;}
+.nav-menu li {height:31px;text-align:center; line-height:31px; float:left; }
+.nav-menu li a{color:#2b2b2b; font-weight:bold;}
+.nav-menu li.sep{background: url(resource/img/admin/step.png) no-repeat; width:2px; height:31px; margin:0px 5px;}
+.nav .normal{width:72px; text-align:center;}
+.top-bottom{width:100%; background: url(resource/img/admin/bg.png) repeat-x 0px -34px; height:3px;}
+.undis{display:none;}
+.dis{display:block;}
+
+#main{
+_width:100%;
+height:100%;
+padding:0;
+padding-left:226px;
+color:#000000;
+}
+
+#midpart{
+height:90%;
+float:right;
+width:100%;
+border-top:1px solid #AFEEEE;
+}
+#leftpart{
+height:90%;
+min-height:700px;
+overflow:hidden;
+background:url(resource/img/admin/lbg.jpg) right repeat-y #f6fafb;
+_display:inline;
+float:left;
+width:226px;
+margin-left:-230px;
+padding-top:0px;
+border:1px solid #AFEEEE;
+}

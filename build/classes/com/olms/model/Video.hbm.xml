@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.olms.model.Video">
+		<id name="videoID">
+			<generator class="identity" />
+		</id>
+		<property name="videoName" />
+		<property name="description" />
+		<property name="path" />
+		<property name="status" />
+		<many-to-one name="course" class="com.olms.model.Course" lazy="false"
+			column="courseID" not-null="true" />
+
+		<set name="comments" inverse="true" lazy="false">
+			<key column="videoID" />
+			<one-to-many class="com.olms.model.CommentItem" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+

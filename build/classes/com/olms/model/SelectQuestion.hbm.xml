@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.olms.model.SelectQuestion">
+		<id name="selectQuestionID">
+            <generator class="identity" />
+		</id>
+		
+		<property name="question"/>
+		<property name="itemA"/>
+		<property name="itemB"/>
+		<property name="itemC"/>
+		<property name="itemD"/>
+		<property name="rightAnswer"/>
+		<property name="userAnswer"/>
+		<property name="status"/>
+		<many-to-one name="paper" class="com.olms.model.TestPaper" lazy="false" column="testPaperID" not-null="true" />
+		
+	</class>	
+</hibernate-mapping>
+

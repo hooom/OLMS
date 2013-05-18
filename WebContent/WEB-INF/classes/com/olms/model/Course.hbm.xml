@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.olms.model.Course">
+		<id name="courseID">
+			<generator class="native" />
+		</id>
+
+		<many-to-one name="teacher" column="teacherID" class="com.olms.model.User"
+			not-null="true" lazy="false" />
+		<property name="courseName" />
+		<property name="description" />
+		<property name="level" />
+
+		<set name="testPapers" inverse="true" lazy="false">
+			<key column="courseID" />
+			<one-to-many class="com.olms.model.TestPaper" />
+		</set>
+
+		<set name="videos" inverse="true" lazy="false">
+			<key column="courseID" />
+			<one-to-many class="com.olms.model.Video" />
+		</set>
+		<property name="status" />
+		<property name="requireKnowledge" />
+		<property name="gain" />
+		<property name="introVideo" />
+		<property name="introPicture" />
+
+	</class>
+</hibernate-mapping>
+

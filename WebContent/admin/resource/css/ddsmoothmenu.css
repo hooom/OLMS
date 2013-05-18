@@ -1,0 +1,54 @@
+/*Download by http://www.jb51.net*/
+#menu{background:url(../img/dhlbg.jpg) repeat-x;  height:40px; width:980px;}
+
+.ddsmoothmenu {
+	padding-left:10px
+}
+.ddsmoothmenu UL {
+	text-align:center;padding:0 10px; float:center; display:inline; line-height: 37px; font-weight:bold;
+}
+.ddsmoothmenu UL LI {
+	margin:0px 16px 0px 2px;DISPLAY: block; FLOAT: left; WIDTH: 82px; LINE-HEIGHT: 37px; POSITION: relative; TEXT-ALIGN: center
+}
+ HTML .ddsmoothmenu UL LI {
+	height:40px; FLOAT: left; WIDTH: 82px; background:url(../img/dhlBG01.gif); LINE-HEIGHT: 37px; POSITION: relative; TEXT-ALIGN: center
+}
+.ddsmoothmenu UL LI A {
+	DISPLAY: block; FONT-WEIGHT: bold; WIDTH: 82px; TEXT-DECORATION: none
+}
+.ddsmoothmenu UL LI A:link {
+	COLOR: #fff
+}
+.ddsmoothmenu UL LI A:visited {
+	COLOR: #fff
+}
+.ddsmoothmenu UL LI A:hover {
+	background:url(../img/dhlBG02.gif) repeat-y;
+}
+.ddsmoothmenu UL LI UL {
+	padding:0 0px;LEFT: 0px; VISIBILITY: hidden; POSITION: absolute
+}
+.ddsmoothmenu UL LI UL LI {
+	margin:0px 0px 0px 0px;BACKGROUND: url(../img/dhlBG01.gif); FLOAT: left; WIDTH: 82px; LINE-HEIGHT: 37px; BORDER-BOTTOM: #96d47d 0px solid
+}
+.ddsmoothmenu UL LI UL LI A {
+	DISPLAY: block;  WIDTH: 82px; TEXT-DECORATION: none
+}
+.ddsmoothmenu UL LI UL LI A:hover {
+	BACKGROUND: url(../img/dhlBG02.gif)
+}
+.ddsmoothmenu UL LI UL LI UL {
+	TOP: 0px
+}
+.downarrowclass {
+	DISPLAY: none; POSITION: absolute
+}
+.rightarrowclass {
+	DISPLAY: none; POSITION: absolute
+}
+.ddshadow {
+	BACKGROUND: silver; LEFT: 0px; WIDTH: 0px; POSITION: absolute; TOP: 0px; HEIGHT: 0px
+}
+.toplevelshadow {
+	opacity: 0.8
+}

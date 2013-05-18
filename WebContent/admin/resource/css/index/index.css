@@ -1,0 +1,145 @@
+#index {
+	width:960px;
+	height:640px;
+	margin:0 auto;
+}
+#mid-pic{
+	width:960px;
+	height:249px;
+}
+#index_lists{
+	position:relative;
+	top:10px;
+	width:100%;
+	height:380px;
+}
+#index_left,#index_center,#index_right{
+	width:308px;
+	height:380px;
+	float:left;
+}
+#index_center{
+	width:498px;
+}
+#index_right{
+	width:154px;
+}
+#right_top,#right_bottom{
+	height:190px;
+	width:100%;
+	background:url(/img/mainList_right.gif) top right;
+}
+.left,.right{
+	float:left;
+	width:43px;
+	height:100%;
+	background:url(/img/mainList_left.gif) bottom;
+}
+.left ul,.right ul{
+	width:100%;
+	height:90%;
+	background:url(/img/mainList_left.gif);
+}
+#left_down{
+	background:url(/img/mainList_right_down.gif) top right; height:41%;}
+#down_left{
+	background:url(/img/mainList_left_down.gif) top right;height:41%;}
+.right{
+	width:260px;
+	background:url(/img/mainList_right.gif) bottom right;
+}
+.right ul{
+	background:url(/img/mainList_right.gif) top right;
+	
+}
+#mid{
+	height:30px;}
+.list_right{
+	float:left;
+}
+.list_right ul{
+	position:relative;
+	top:30px;
+	background:url(/img/mainList_right.gif) bottom right;
+	width:111px;
+	height:141px;
+}
+#center_con{
+	width:450px;
+}
+#right_con{
+	width:111px;
+}
+.title{
+	background:url(/img/index_title.gif);
+	height:19px;
+	width:74px;
+	position:relative;
+	top:13px;
+	left:5px;
+}
+#down{
+	background:url(/img/index_title.gif) 0px -80px;
+	}
+#news {
+	background:url(/img/index_title.gif) 0px -40px;
+}
+#acc {
+	background:url(/img/index_title.gif) 0px -60px;
+}
+#link {
+	background:url(/img/index_title.gif) 0px -20px;
+}
+.index_list{
+	position:relative;
+	top:25px;
+	left:-20px;
+}
+.index_list li{
+	border-bottom:1px dotted #b7b7b7;
+	}
+.index_list a{
+	background:url(/img/list_style.gif) no-repeat 0px 4px;
+	padding-left:20px;
+	line-height:24px;
+	display:block;
+	overflow:hidden;
+	position:relative;
+	top:5px;
+	font-size:13px;
+	height:24px;
+}
+.index_list li:hover{
+}
+.index_list a:hover,.link_list a:hover{
+	color:#0A9BE6;
+	text-decoration:none;
+}
+.index_list a:hover{
+	background:url(/img/list_selected_style.gif) no-repeat 0px 4px;
+}
+.oa_list a{
+	height:50px;
+}
+.link_list{
+	position:relative;
+	left:-10px;
+	padding-left:18px;
+	background:url(/img/landian.gif) no-repeat 0px 10px;
+	line-height:25px;
+}
+.more{
+	width:39px;
+	height:11px;
+	float:right;
+	position:relative;
+	right:30px;
+}
+.more01{
+	width:39px;
+	height:11px;
+	float:right;
+	position:relative;
+	right:30px;
+	
+}

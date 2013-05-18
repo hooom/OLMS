@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.olms.model.CommentItem">
+		<id name="commentItemID">
+			<generator class="native" />
+		</id>
+		<property name="content" />
+		<property name="status" />
+		<many-to-one name="speaker" column="speakerID" lazy="false" class="com.olms.model.User"
+			not-null="true" />
+		<many-to-one name="video" column="videoID" lazy="false" class="com.olms.model.Video"
+			not-null="true" />
+
+	</class>
+</hibernate-mapping>
+

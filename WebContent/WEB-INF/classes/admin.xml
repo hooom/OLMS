@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="admin" namespace="/admin" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<interceptors>
+			<interceptor name="loginInterceptor" class="loginInterceptor" /> <!-- 检验登陆session是否失效  -->
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInterceptor" /> 				
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="loginStack" />
+		
+		<global-results>
+			<result name="userNotLogin" type="tiles">/admin.sessionTimeout.tiles</result>
+		</global-results>
+		
+		
+		<action name="goLogin">
+			<interceptor-ref name="defaultStack" />
+			<result type="tiles">/admin.login.tiles</result>
+		</action>
+		<action name="login" class="loginAction">
+			<interceptor-ref name="defaultStack" />
+			<result type="redirect">goIndex</result>
+			<result name="student" type="chain">
+				<param name="actionName">goIndex</param>
+				<param name="namespace">/front</param>
+			</result>
+			<result name="input" type="tiles">/admin.login.tiles</result>
+		</action>
+		
+		<action name="logout" class="logoutAction">
+			<result type="tiles">/admin.login.tiles</result>
+		</action>
+		<action name="goIndex">
+			<result type="tiles">/admin.index.tiles</result>
+		</action>
+		
+		<action name="userManage" class="userListAction">
+			<result type="tiles">/admin.userManage.tiles</result>
+		</action>
+		<action name="userApprove" class="userApproveAction">
+			<result type="chain">userManage</result>
+		</action>
+		<action name="userReject" class="userRejectAction">
+			<result type="chain">userManage</result>
+		</action>
+		
+		<action name="courseManage" class="courseListAction">
+			<result type="tiles">/admin.courseManage.tiles</result>
+		</action>
+		<action name="courseAddInput" class="courseAddAction" method="input">
+			<result name="input" type="tiles">/admin.courseManage.courseAdd.tiles</result>
+		</action>
+		<action name="courseAdd" class="courseAddAction">
+			<result type="chain">courseManage</result>
+		</action>
+		<action name="courseUpdateInput" class="courseUpdateAction" method="input">
+			<result name="input" type="tiles">/admin.courseManage.courseDetail.tiles</result>
+		</action>
+
+		
+		<action name="videoManage" class="videoListAction">
+			<result type="tiles">/admin.videoManage.tiles</result>
+		</action>
+		<action name="videoAddInput" class="videoAddAction" method="input">
+			<result name="input" type="tiles">/admin.videoManage.videoAdd.tiles</result>
+		</action>
+		<action name="videoAdd" class="videoAddAction" method="execute">
+			<result type="tiles">/admin.videoManage.videoAddSuccess.tiles</result>
+			<result name="input" type="tiles">/admin.videoManage.videoAdd.tiles</result>
+		</action>
+		<action name="videoDetail" class="videoDetailAction" method="input">
+			<result name="input" type="tiles">/admin.videoManage.videoDetail.tiles</result>
+		</action>
+		
+		<action name="testPaperManage">
+			<result type="tiles">/admin.testPaperManage.tiles</result>
+		</action>
+		
+		<action name="examManage">
+			<result type="tiles">/admin.examManage.tiles</result>
+		</action>
+		
+
+	</package>
+
+
+
+</struts>

@@ -5,17 +5,13 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="false" />
-
-    <package name="default" namespace="/" extends="struts-default">
-
-		<action name="register" class="userAddAction">
-			<result>/userAddSuccess.jsp</result>
-		</action>
-    </package>
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="100000000" />
+	
+	<include file="front.xml"/>
+	<include file="admin.xml"/>
 
 
-    <!-- Add packages here -->
 
 </struts>

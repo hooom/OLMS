@@ -12,10 +12,10 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/chenlu">
+			value="jdbc:mysql://localhost:3306/olms">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="password" value=""></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -30,29 +30,121 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
-	
+		
 		<property name="mappingResources">		<!--关系映射文件-->
 			<list>
-				<value>model/User.hbm.xml</value>
+				<value>com/olms/model/CommentItem.hbm.xml</value>
+				<value>com/olms/model/Course.hbm.xml</value>
+				<value>com/olms/model/SelectQuestion.hbm.xml</value>
+				<value>com/olms/model/TestPaper.hbm.xml</value>
+				<value>com/olms/model/Video.hbm.xml</value>
+		 		<value>com/olms/model/User.hbm.xml</value>
+				
 			</list>
 		</property>
-	
+		
 	</bean>
 	
+	<!-- interceptor information -->
+	<bean id="loginInterceptor" class="com.olms.interceptor.UserLoginInterceptor">
+		<property name="userService" ref="userService"/>
+	</bean>
+	
+		<!-- 定义HibernateTemplate -->
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
-	<bean id="userDao" class="dao.UserDaoImpl">
-		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	<!--  dao info -->
+	<bean id="commentItemDao" class="com.olms.dao.CommentItemDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="courseDao" class="com.olms.dao.CourseDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="selectQuestionDao" class="com.olms.dao.SelectQuestionDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="testPaperDao" class="com.olms.dao.TestPaperDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="userDao" class="com.olms.dao.UserDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="videoDao" class="com.olms.dao.VideoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+	<!-- service info -->
+	<bean id="commentItemService" class="com.olms.service.CommentItemServiceImpl">
+		<property name="commentItemDao" ref="commentItemDao"/>
+	</bean>
+	<bean id="courseService" class="com.olms.service.CourseServiceImpl">
+		<property name="courseDao" ref="courseDao"/>
+	</bean>
+	<bean id="selectQuestionService" class="com.olms.service.SelectQuestionServiceImpl">
+		<property name="selectQuestionDao" ref="selectQuestionDao"/>
+	</bean>
+	<bean id="testPaperService" class="com.olms.service.TestPaperServiceImpl">
+		<property name="testPaperDao" ref="testPaperDao"/>
+	</bean>
+	<bean id="userService" class="com.olms.service.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="videoService" class="com.olms.service.VideoServiceImpl">
+		<property name="videoDao" ref="videoDao"/>
 	</bean>
 	
-	<bean id="userService" class="service.UserServiceImpl">
-		<property name="userDao" ref="userDao"></property>
+	<!-- user action info -->
+	<bean id="loginAction" class="com.olms.action.user.LoginAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="logoutAction" class="com.olms.action.user.LogoutAction">
+	</bean>
+	<bean id="registerAction" class="com.olms.action.user.RegisterAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="userApproveAction" class="com.olms.action.user.UserApproveAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="userListAction" class="com.olms.action.user.UserListAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="userRejectAction" class="com.olms.action.user.UserRejectAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+
+	<!-- course action info -->
+	<bean id="courseListAction" class="com.olms.action.course.CourseListAction">
+		<property name="courseService" ref="courseService" />
+	</bean>
+	<bean id="courseAddAction" class="com.olms.action.course.CourseAddAction">
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="courseUpdateAction" class="com.olms.action.course.CourseUpdateAction">
+		<property name="courseService" ref="courseService"/>
 	</bean>
 	
-	<bean id="userAddAction" class="action.UserAddAction">
-		<property name="userService" ref="userService"></property>
+	<!-- video action -->
+	<bean id="videoListAction" class="com.olms.action.video.VideoListAction">
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="videoAddAction" class="com.olms.action.video.VideoAddAction">
+		<property name="videoService" ref="videoService"/>
+		<property name="courseService" ref="courseService"/>
+		<property name="userService" ref="userService" />
+	</bean>
+	<bean id="videoDetailAction" class="com.olms.action.video.VideoDetailAction">
+		<property name="videoService" ref="videoService"/>
+		<property name="courseService" ref="courseService"></property>
+	</bean>
+	<bean id="videoPlayAction" class="com.olms.action.video.VideoPlayAction">
+		<property name="videoService" ref="videoService"/>
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	
+	<bean id="goIndexAction" class="com.olms.action.GoIndexAction">
+		<property name="courseService" ref="courseService"/>
 	</bean>
 	
 	</beans>

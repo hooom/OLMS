@@ -86,9 +86,19 @@
 			<result name="input" type="tiles">/admin.videoManage.videoDetail.tiles</result>
 		</action>
 		
-		<action name="testPaperManage">
-			<result type="tiles">/admin.testPaperManage.tiles</result>
+		<action name="testPaperManage" class="testPaperListAction">
+			<result name="success" type="tiles">/admin.testPaperManage.tiles</result>
 		</action>
+		<action name="testPaperAddInput" class="testPaperAddAction" method="input">
+			<result name="input" type="tiles">/admin.testPaperManage.testPaperAdd.tiles</result>
+		</action>
+		<action name="testPaperAdd" class="testPaperAddAction">
+			<result type="chain">testPaperManage</result>
+		</action>
+		<action name="testPaperUpdateInput" class="testPaperUpdateAction" method="input">
+			<result name="input" type="tiles">/admin.testPaperManage</result>
+		</action>
+		
 		
 		<action name="examManage">
 			<result type="tiles">/admin.examManage.tiles</result>

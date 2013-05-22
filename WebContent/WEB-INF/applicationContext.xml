@@ -12,7 +12,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/olms">
+			value="jdbc:mysql://localhost:3306/OLMS">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value=""></property>
@@ -140,6 +140,20 @@
 	</bean>
 	<bean id="videoPlayAction" class="com.olms.action.video.VideoPlayAction">
 		<property name="videoService" ref="videoService"/>
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	
+	<!-- testPaper action info -->
+	<bean id="testPaperListAction" class="com.olms.action.testPaper.TestPaperListAction">
+		<property name="testPaperService" ref="testPaperService" />
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="testPaperAddAction" class="com.olms.action.testPaper.TestPaperAddAction">
+		<property name="testPaperService" ref="testPaperService"/>
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="testPaperUpdateAction" class="com.olms.action.testPaper.TestPaperUpdateAction">
+		<property name="testPaperService" ref="testPaperService"/>
 		<property name="courseService" ref="courseService"/>
 	</bean>
 	

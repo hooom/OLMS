@@ -82,14 +82,33 @@
     </definition> 
 	
 	
-	<!--  test paper manage -->	
+	<!--  test paper manage 
     <definition name="adminTestPaperManageSubMenu" extends="adminSubMenuTemplate">
     	<put-attribute name="subMenuItems" value="/admin/testPaperManage/subMenuItems.jsp" />
     </definition>
     <definition name="/admin.testPaperManage.tiles" extends="adminTemplate">
     	<put-attribute name="subMenu" value="adminTestPaperManageSubMenu" />
     	<put-attribute name="content" value="/admin/testPaperManage/testPaperManage.jsp" />
+    </definition>-->	
+    
+    
+    <!-- testPaper manage -->
+    <definition name="adminTestPaperManageSubMenu" extends="adminSubMenuTemplate">
+    	<put-attribute name="subMenuItems" value="/admin/testPaperManage/subMenuItems.jsp" />
     </definition>
+    <definition name="adminTestPaperManageTemplate" extends="adminTemplate">
+    	<put-attribute name="headScript" value="/admin/testPaperManage/testPaperManageHeadScript.jsp" />
+    	<put-attribute name="subMenu" value="adminTestPaperManageSubMenu" />
+    </definition>
+    <definition name="/admin.testPaperManage.tiles" extends="adminTestPaperManageTemplate">
+    	<put-attribute name="content" value="/admin/testPaperManage/testPaperManage.jsp" />
+    </definition>
+    <definition name="/admin.testPaperManage.testPaperAdd.tiles" extends="adminTestPaperManageTemplate">
+    	<put-attribute name="content" value="/admin/testPaperManage/testPaperAdd.jsp" />
+    </definition>	
+    <definition name="/admin.testPaperManage.testPaperDetail.tiles" extends="adminTestPaperManageTemplate">
+    	<put-attribute name="content" value="/admin/testPaperManage/testPaperDetail.jsp" />
+    </definition>	
 		
 	<!--  exam manage -->
     <definition name="adminExamManageSubMenu" extends="adminSubMenuTemplate">

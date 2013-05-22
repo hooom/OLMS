@@ -31,6 +31,13 @@
 			<result name="input" type="tiles">/front.udacity.courseDetail.tiles</result>
 		</action>
 		
+		<action name="testPaperList" class="testPaperListAction" method="query">
+			<result type="tiles">/front.udacity.testPaperList.tiles</result>
+		</action>
+		<action name="testPaperDetailInput" class="testPaperUpdateAction" method="input">
+			<result name="input" type="tiles">/front.udacity.testPaperDetail.tiles</result>
+		</action>
+		
 		<action name="videoPlay" class="videoPlayAction" method="input">
 			<result name="input" type="tiles">/front.udacity.videoPlay.tiles</result>
 		</action>

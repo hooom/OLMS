@@ -38,7 +38,7 @@ public class CourseAddAction extends ActionSupport{
 		
 		String picturePath = saveIntroPicture();
 		course.setIntroPicture(picturePath);
-		
+		System.out.println("coursename:"+course.getCourseName());
 		courseService.add(course);
 		courses = courseService.list(user, Course.ALL);
 		return SUCCESS;

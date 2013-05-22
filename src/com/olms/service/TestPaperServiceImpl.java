@@ -1,9 +1,12 @@
 package com.olms.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.olms.dao.TestPaperDao;
+import com.olms.model.Course;
 import com.olms.model.TestPaper;
+import com.olms.model.User;
 
 public class TestPaperServiceImpl implements TestPaperService {
 	private TestPaperDao testPaperDao;
@@ -41,6 +44,21 @@ public class TestPaperServiceImpl implements TestPaperService {
 		this.testPaperDao = testPaperDao;
 	}
 
+	@Override
+	public List<TestPaper> list(Course course) {
+		// TODO Auto-generated method stub
+		List<TestPaper> result = new ArrayList<TestPaper>();
+		List<TestPaper> temp = null;
+		
+		if(course.getTeacher().getRole().equals(User.ADMIN))
+		{
+			temp = testPaperDao.list();
+		}else{
+			new ArrayList<TestPaper>(course.getTestPapers());
+		}
+		
+		return result;
+	}
 	
 	
 }

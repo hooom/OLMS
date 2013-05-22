@@ -5,9 +5,18 @@ import java.util.Set;
 
 public class TestPaper implements StatusAware{
 	
-	private Integer testPaperID;
+	private Integer testPaperID = 0;
 	private Course course;
 	private Set<SelectQuestion> items;
+	private String testPaperName;
+	
+	public String getTestPaperName() {
+		return testPaperName;
+	}
+
+	public void setTestPaperName(String testPaperName) {
+		this.testPaperName = testPaperName;
+	}
 	private String status;
 	
 	public TestPaper()
@@ -61,8 +70,6 @@ public class TestPaper implements StatusAware{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
-	
+		
 
 }

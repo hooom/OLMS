@@ -7,6 +7,8 @@
 		<id name="testPaperID">
 			<generator class="identity" />
 		</id>
+		
+		<property name="testPaperName" />
 
 		<many-to-one name="course" class="com.olms.model.Course" lazy="false"
 			column="courseID" not-null="true" />

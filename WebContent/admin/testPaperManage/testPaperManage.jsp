@@ -19,15 +19,15 @@
 						<th>操作选项</th>
 					</tr></thead>
 					<tbody class="pn-ltbody">
-						<s:iterator value="allTestPapers" var="testPaper">
+						<s:iterator value="testPapers" var="t">
 							<tr onmouseover="this.bgColor='#eeeeee'" onmouseout="this.bgColor='#ffffff'">
-								<td align="center">${testPaper.testPaperID}</td>
-								<td align="center">${testPaper.testPaperName}</td>
-								<td align="center">${testPaper.course.courseName}</td>
-								<td align="center">${testPaper.course.teacher.username}</td>
-								<td align="center">${testPaper.status}</td>
-								<td align="center"><a href="testPaperUpdate.action?testPaperID=${testPaper.testPaperID}" class="pn-opt">修改</a> | 
-								<a href="testPaperDelete.action?userID=${testPaper.testPaperID}" class="pn-opt">删除</a></td>
+								<td align="center">${t.testPaperID}</td>
+								<td align="center">${t.testPaperName}</td>
+								<td align="center">${t.course.courseName}</td>
+								<td align="center">${t.course.teacher.username}</td>
+								<td align="center">${t.status}</td>
+								<td align="center"><a href="testPaperUpdateInput.action?testPaperID=${t.testPaperID}" class="pn-opt">修改</a> | 
+								<a href="testPaperDelete.action?testPaperID=${t.testPaperID}" class="pn-opt">删除</a></td>
 							</tr>
 						</s:iterator>
 					</tbody>

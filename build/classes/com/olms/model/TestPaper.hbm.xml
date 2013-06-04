@@ -12,7 +12,7 @@
 
 		<many-to-one name="course" class="com.olms.model.Course" lazy="false"
 			column="courseID" not-null="true" />
-		<set name="items" inverse="true" lazy="false">
+		<set name="items" lazy="false" inverse="true" cascade="all">
 			<key column="testPaperID" />
 			<one-to-many class="com.olms.model.SelectQuestion" />
 		</set>

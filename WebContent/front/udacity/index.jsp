@@ -46,10 +46,20 @@
 						<s:url action="courseDetailInput" namespace="front" var="courseDetailInputLink">
 							<s:param name="course.courseID">${course.courseID}</s:param>
 						</s:url>
+						<s:url action="testPaperListInput" namespace="front" var="testPaperListInputLink">
+							<s:param name="courseID">${course.courseID}</s:param>
+						</s:url>
 						<a href="../${courseDetailInputLink}">
 							<img src="..${course.introPicture}" alt="Intro to Computer Science">
+						</a>
+						<div>
+						<a href="../${courseDetailInputLink}" style="text-align:left">
 							<span class="course-title">${course.courseName}</span>
 						</a>
+						<a href="../${testPaperListInputLink}" style="text-align:right">
+							<span class="course-title">测试</span>
+						</a>
+						</div>
 					</li>
 				</s:iterator>
 			</ul>

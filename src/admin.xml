@@ -57,6 +57,17 @@
 		<action name="userReject" class="userRejectAction">
 			<result type="chain">userManage</result>
 		</action>
+		<action name="userDelete" class="userDeleteAction">
+			<result type="chain">userManage</result>
+		</action>
+		
+		<action name="userModifyBefore" class="userModifyBeforeAction">
+			<result type="tiles">/admin.useModify.tiles</result>
+		</action>
+		
+		<action name="modifyUser" class="usermodifyAction">
+		   <result type="chain">userManage</result>
+		</action>
 		
 		<action name="courseManage" class="courseListAction">
 			<result type="tiles">/admin.courseManage.tiles</result>
@@ -96,7 +107,13 @@
 			<result type="chain">testPaperManage</result>
 		</action>
 		<action name="testPaperUpdateInput" class="testPaperUpdateAction" method="input">
-			<result name="input" type="tiles">/admin.testPaperManage</result>
+			<result name="input" type="tiles">/admin.testPaperManage.testPaperUpdate.tiles</result>
+		</action>
+		<action name="testPaperUpdate" class="testPaperUpdateAction">
+			<result type="chain">testPaperManage</result>
+		</action>
+		<action name="testPaperDelete" class="testPaperDeleteAction">
+			<result type="redirect">testPaperManage.action</result>
 		</action>
 		
 		

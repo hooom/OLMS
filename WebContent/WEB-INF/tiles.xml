@@ -40,6 +40,10 @@
     	<put-attribute name="subMenu" value="adminSubMenuTemplate" />
     	<put-attribute name="content" value="/admin/userManage/userManage.jsp" />
     </definition>  
+    <definition name="/admin.useModify.tiles" extends="adminTemplate">
+    	<put-attribute name="subMenu" value="adminSubMenuTemplate" />
+    	<put-attribute name="content" value="/admin/userManage/userEdit.jsp" />
+    </definition> 
     
     <!-- course manage -->
     <definition name="adminCourseManageSubMenu" extends="adminSubMenuTemplate">
@@ -106,9 +110,10 @@
     <definition name="/admin.testPaperManage.testPaperAdd.tiles" extends="adminTestPaperManageTemplate">
     	<put-attribute name="content" value="/admin/testPaperManage/testPaperAdd.jsp" />
     </definition>	
-    <definition name="/admin.testPaperManage.testPaperDetail.tiles" extends="adminTestPaperManageTemplate">
-    	<put-attribute name="content" value="/admin/testPaperManage/testPaperDetail.jsp" />
-    </definition>	
+    <definition name="/admin.testPaperManage.testPaperUpdate.tiles" extends="adminTestPaperManageTemplate">
+    	<put-attribute name="content" value="/admin/testPaperManage/testPaperUpdate.jsp" />
+    </definition>
+  
 		
 	<!--  exam manage -->
     <definition name="adminExamManageSubMenu" extends="adminSubMenuTemplate">
@@ -145,7 +150,15 @@
     <definition name="/front.udacity.videoPlay.tiles" extends="udacityTemplate">
     	<put-attribute name="container" value="/front/udacity/videoPlay.jsp"/>
     </definition>
-    
+    <definition name="/front.udacity.testPaperList.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/testPaperList.jsp"/>
+    </definition>
+    <definition name="/front.udacity.testPaperDetail.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/testPaperDetail.jsp"/>
+    </definition>
+    <definition name="/front.udacity.testPaperScore.tiles" extends="udacityTemplate">
+    	<put-attribute name="container" value="/front/udacity/testPaperScore.jsp"/>
+    </definition>
 </tiles-definitions>
 
 

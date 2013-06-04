@@ -45,14 +45,14 @@ public class TestPaperServiceImpl implements TestPaperService {
 	}
 
 	@Override
-	public List<TestPaper> list(Course course) {
+	public List<TestPaper> listByCourse(Course course) {
 		// TODO Auto-generated method stub
 		List<TestPaper> result = new ArrayList<TestPaper>();
 		List<TestPaper> temp = null;
 		
 		if(course.getTeacher().getRole().equals(User.ADMIN))
 		{
-			temp = testPaperDao.list();
+			result = testPaperDao.listByCourse(course);
 		}else{
 			new ArrayList<TestPaper>(course.getTestPapers());
 		}

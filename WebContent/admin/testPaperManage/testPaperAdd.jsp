@@ -11,7 +11,19 @@
 		<div class="body-box">
 		 <s:form action="testPaperAdd" method="post" enctype="multipart/form-data">
 		 	<s:textfield label="试卷名" key="testPaper.testPaperName"  />
-		 	<s:select label="选择试卷所属课程" list="courses" key="testPaper.course.courseID" listkey="courseID" listValue="courseName"  />
+		 	<s:select label="试卷所属课程" key="testPaper.course.courseID" list="courses" listKey="courseID" listValue="courseName"/>
+		 	<s:textfield label="题目1，题干" name="q1.question" />
+		 	<s:textfield label="A" name="q1.itemA" />
+		 	<s:textfield label="B" name="q1.itemB"/>
+		 	<s:textfield label="C" name="q1.itemC"/>
+		 	<s:textfield label="D" name="q1.itemD"/>
+		 	<s:select key="q1.rightAnswer" list="rightAnswers" />
+		 	<s:textfield label="题目2，题干" name="q2.question" />
+		 	<s:textfield label="A" name="q2.itemA" />
+		 	<s:textfield label="B" name="q2.itemB"/>
+		 	<s:textfield label="C" name="q2.itemC"/>
+		 	<s:textfield label="D" name="q2.itemD"/>
+		 	<s:select key="q2.rightAnswer" list="rightAnswers" />
 		 	<s:submit key="submit" />
 		 	
 		 </s:form>

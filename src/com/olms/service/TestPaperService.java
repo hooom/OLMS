@@ -14,6 +14,6 @@ public interface TestPaperService {
 	public List<TestPaper> list();
 	public TestPaper getTestPaperByID(Integer testPaperID);
 	
-	public List<TestPaper> list(Course course); // list testPapers according to course
+	public List<TestPaper> listByCourse(Course course); // list testPapers according to course
 
 }

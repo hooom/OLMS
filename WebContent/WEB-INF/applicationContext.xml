@@ -113,6 +113,15 @@
 	<bean id="userRejectAction" class="com.olms.action.user.UserRejectAction">
 		<property name="userService" ref="userService"/>
 	</bean>
+	<bean id="userDeleteAction" class="com.olms.action.user.UserDeleteAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="usermodifyAction" class="com.olms.action.user.UserModifyAction">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<bean id="userModifyBeforeAction" class="com.olms.action.user.UserModifyBeforeAction">
+		<property name="userService" ref="userService"/>
+	</bean>
 
 	<!-- course action info -->
 	<bean id="courseListAction" class="com.olms.action.course.CourseListAction">
@@ -150,10 +159,22 @@
 	</bean>
 	<bean id="testPaperAddAction" class="com.olms.action.testPaper.TestPaperAddAction">
 		<property name="testPaperService" ref="testPaperService"/>
+		<property name="selectQuestionService" ref="selectQuestionService"/>
 		<property name="courseService" ref="courseService"/>
 	</bean>
 	<bean id="testPaperUpdateAction" class="com.olms.action.testPaper.TestPaperUpdateAction">
 		<property name="testPaperService" ref="testPaperService"/>
+		<property name="selectQuestionService" ref="selectQuestionService"/>
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="testPaperDeleteAction" class="com.olms.action.testPaper.TestPaperDeleteAction">
+		<property name="testPaperService" ref="testPaperService"/>
+		<property name="selectQuestionService" ref="selectQuestionService"/>
+		<property name="courseService" ref="courseService"/>
+	</bean>
+	<bean id="testPaperScoreAction" class="com.olms.action.testPaper.TestPaperScoreAction">
+		<property name="testPaperService" ref="testPaperService"/>
+		<property name="selectQuestionService" ref="selectQuestionService"/>
 		<property name="courseService" ref="courseService"/>
 	</bean>
 	

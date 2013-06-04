@@ -17,7 +17,7 @@
 			<key column="speakerID" not-null="true" />
 			<one-to-many class="com.olms.model.CommentItem" />
 		</set>
-		<set name="courses" inverse="true" lazy="false">
+		<set name="courses" inverse="true" lazy="false" cascade="all-delete-orphan">
 			<key column="teacherID" not-null="true" />
 			<one-to-many class="com.olms.model.Course" />
 		</set>

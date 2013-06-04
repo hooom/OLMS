@@ -16,7 +16,7 @@
 		<property name="rightAnswer"/>
 		<property name="userAnswer"/>
 		<property name="status"/>
-		<many-to-one name="paper" class="com.olms.model.TestPaper" lazy="false" column="testPaperID" not-null="true" />
+		<many-to-one name="testPaper" class="com.olms.model.TestPaper" lazy="false" column="testPaperID" not-null="true" />
 		
 	</class>	
 </hibernate-mapping>

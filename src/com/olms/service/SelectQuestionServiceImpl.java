@@ -7,7 +7,7 @@ import com.olms.model.SelectQuestion;
 
 public class SelectQuestionServiceImpl implements SelectQuestionService {
 	private SelectQuestionDao selectQuestionDao;
-
+	
 	@Override
 	public void add(SelectQuestion selectQuestion) {
 		selectQuestionDao.add(selectQuestion);
@@ -42,6 +42,9 @@ public class SelectQuestionServiceImpl implements SelectQuestionService {
 		this.selectQuestionDao = selectQuestionDao;
 	}
 
-	
+	public List<SelectQuestion> listByTestPaperID(Integer testPaperID){
+		return selectQuestionDao.listByTestPaperID(testPaperID);
+		
+	}
 	
 }

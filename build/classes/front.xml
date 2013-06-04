@@ -37,6 +37,18 @@
 		<action name="testPaperDetailInput" class="testPaperUpdateAction" method="input">
 			<result name="input" type="tiles">/front.udacity.testPaperDetail.tiles</result>
 		</action>
+		<action name="testPaperListInput" class="testPaperListAction" method="input">
+			<result name="input" type="tiles">/front.udacity.testPaperList.tiles</result>
+		</action>
+		<action name="testPaperExamInput" class="testPaperListAction" method="exam">
+			<result name="exam" type="tiles">/front.udacity.testPaperDetail.tiles</result>
+		</action>
+		<action name="testPaperScoreInput" class="testPaperScoreAction" method="input">
+			<result name="input" type="tiles">/front.udacity.testPaperScore.tiles</result>
+		</action>
+		<action name="testPaperListScore" class="testPaperListAction" method="score">
+			<result name="score" type="tiles">/front.udacity.testPaperScore.tiles</result>
+		</action>
 		
 		<action name="videoPlay" class="videoPlayAction" method="input">
 			<result name="input" type="tiles">/front.udacity.videoPlay.tiles</result>

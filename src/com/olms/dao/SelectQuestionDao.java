@@ -11,5 +11,6 @@ public interface SelectQuestionDao {
 	public void update(SelectQuestion selectQuestion);
 	public List<SelectQuestion> list();
 	public SelectQuestion getSelectQuestionByID(Integer selectQuestionID);
+	public List<SelectQuestion> listByTestPaperID(Integer testPaperID);
 
 }

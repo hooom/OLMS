@@ -6,7 +6,7 @@ public class SelectQuestion implements StatusAware{
 	public static final String C = "C";
 	public static final String D = "D";
 	
-	private Integer selectQuestionID;
+	private Integer selectQuestionID = 0;
 	private String question;
 	private String itemA;
 	private String itemB;
@@ -15,7 +15,7 @@ public class SelectQuestion implements StatusAware{
 	private String rightAnswer;
 	private String userAnswer;
 	private String status;
-	private TestPaper paper;
+	private TestPaper testPaper;
 	
 	public SelectQuestion()
 	{
@@ -48,13 +48,31 @@ public class SelectQuestion implements StatusAware{
 	} // end hashCode()
 	
 	
-	
-	public TestPaper getPaper() {
-		return paper;
+	public TestPaper getTestPaper() {
+		return testPaper;
 	}
-	public void setPaper(TestPaper paper) {
-		this.paper = paper;
+
+	public void setTestPaper(TestPaper testPaper) {
+		this.testPaper = testPaper;
 	}
+
+	public static String getA() {
+		return A;
+	}
+
+	public static String getB() {
+		return B;
+	}
+
+	public static String getC() {
+		return C;
+	}
+
+	public static String getD() {
+		return D;
+	}
+
+
 	public Integer getSelectQuestionID() {
 		return selectQuestionID;
 	}
